@@ -134,7 +134,6 @@ The `/screen` Ghostscript preset creates smaller files by reducing image quality
 
 ## Important Deployment Notes
 
-- GitHub Pages cannot run this Flask backend; it only hosts static files. GitHub can store the source code, while a service such as Render can run the Flask app.
 - A production server should run `gunicorn app:app` instead of Flask's development server.
 - The deployed environment must have Ghostscript installed as a system package as well as the Python packages in `requirements.txt`.
 - The current folders use local disk storage. Uploaded and compressed files are temporary and may disappear when a hosting service restarts or redeploys.
