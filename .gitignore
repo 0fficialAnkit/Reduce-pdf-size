@@ -96,3 +96,5 @@ CLAUDE.md
 skills-lock.json
 /docs
 /.superpowers
+.venv
+venv
