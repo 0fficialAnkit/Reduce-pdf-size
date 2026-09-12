@@ -86,15 +86,51 @@ fastlane/test_output
 iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift
-.DS_Store
-CLAUDE.md
-/.claude
-/graphify-out
-*.html
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated application data
+/uploads/
+/compressed/
 *.pdf
-/.agents
-skills-lock.json
-/docs
-/.superpowers
-.venv
-venv
+
+# Logs and local databases
+*.log
+*.sqlite3
+*.db
+
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+*.whl
+
+# macOS and editor files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test and coverage output
+.coverage
+htmlcov/
+.tox/
