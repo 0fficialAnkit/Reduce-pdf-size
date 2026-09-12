@@ -126,6 +126,7 @@
 
 from flask import Flask, request, send_from_directory, render_template, abort
 import os
+import shutil
 import subprocess
 from werkzeug.utils import secure_filename
 
@@ -160,8 +161,13 @@ def compress():
     file.save(input_path)
 
     try:
+        ghostscript = shutil.which('gs') or shutil.which('gswin64c')
+        if ghostscript is None:
+            print("[ERROR] Ghostscript is not installed or not available on PATH.")
+            return 'Ghostscript is not installed', 500
+
         subprocess.run([
-            'gswin64c',
+            ghostscript,
             '-sDEVICE=pdfwrite',
             '-dCompatibilityLevel=1.4',
             '-dPDFSETTINGS=/screen',
